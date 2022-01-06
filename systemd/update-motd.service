@@ -1,0 +1,8 @@
+[Unit]
+Description=Update MOTD
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/run-parts /etc/update-motd-static.d
+Restart=on-failure
+RestartSec=30

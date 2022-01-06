@@ -35,7 +35,7 @@ dimInfoColor="37;0;2"
 me=$(logname)
 
 # Last Login
-read loginIP loginDate <<< $(last $me --time-format iso -2 | awk 'NR==1 { print $3,$4 }')
+read loginIP loginDate <<< $(last $me -i --time-format iso -2 | awk 'NR==1 { print $3,$4 }')
 if [[ $loginDate == *T* ]]; then
   login="$(date -d $loginDate +"%a %b %d %Y, %I:%M %p") $(color $dimInfoColor "» $loginIP")"
 else
